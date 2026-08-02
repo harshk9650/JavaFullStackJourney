@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>ServletConfigPractice</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <!-- here is for the clothes -->
+  <servlet>
+  <servlet-name>Clothes</servlet-name> 
+  <servlet-class>com.example.pr.Clothes</servlet-class>
+  <init-param>
+  <param-name>clt</param-name>
+  <param-value>90</param-value>
+  
+  </init-param>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Clothes</servlet-name>
+	<url-pattern>/clothes</url-pattern>
+  
+  </servlet-mapping>
+  
+   <!-- here is for the clothes -->
+  <servlet>
+  <servlet-name>cosmatics</servlet-name>
+  <servlet-class>com.example.pr.Cosmatics</servlet-class>
+  <init-param>
+  <param-name>cos</param-name>
+  <param-value>25</param-value>
+  
+  </init-param>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>cosmatics</servlet-name>
+	<url-pattern>/cosmatics</url-pattern>
+  
+  </servlet-mapping>
+  
+   <!-- here is for the clothes -->
+  <servlet>
+  <servlet-name>shoes</servlet-name>
+  <servlet-class>com.example.pr.Shoes</servlet-class>
+  <init-param>
+  <param-name>sho</param-name>
+  <param-value>63</param-value>
+  
+  </init-param>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>shoes</servlet-name>
+	<url-pattern>/shoes</url-pattern>
+  
+  </servlet-mapping>
+</web-app>
