@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+body{
+    background-color: lightblue;
+    font-family: Arial;
+}
+
+h2{
+    color: darkblue;
+}
+
+label{
+    color: darkred;
+    font-weight: bold;
+}
+
+input[type=text],
+input[type=password]{
+    background-color: white;
+    color: black;
+    border: 2px solid blue;
+}
+
+input[type=submit]{
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+}
+
+input[type=submit]:hover{
+    background-color: darkgreen;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form action="registration" method="post">
+
+<label>Name:</label>
+<input type="text" name="name"><br>
+
+<label>Email:</label>
+<input type="text" name="email"><br>
+
+<label>Password:</label>
+<input type="password" name="password"><br>
+
+<label>Gender:</label>
+<input type="text" name="gender"><br>
+
+<label>Course:</label>
+<input type="text" name="course"><br>
+
+<label>City:</label>
+<input type="text" name="city"><br><br>
+
+<input type="submit" value="Register">
+
+</form>
+
+</body>
+</html>
