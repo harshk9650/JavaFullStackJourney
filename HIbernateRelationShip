@@ -1,0 +1,71 @@
+import jakarta.persistence.*;
+import java.util.*;
+
+public class HibernateRelationship {
+
+    @Entity
+    @Table(name = "department")
+    public static class Department {
+
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+
+        private String name;
+
+        @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
+        private List<Employee> employees = new ArrayList<>();
+
+        public Department() {}
+
+        public Department(String name) {
+            this.name = name;
+        }
+
+        public void addEmployee(Employee employee) {
+            employees.add(employee);
+            employee.setDepartment(this);
+        }
+    }
+
+
+    @Entity
+    @Table(name = "employee")
+    public static class Employee {
+
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+
+        private String name;
+
+        @ManyToOne
+        @JoinColumn(name = "department_id")
+        private Department department;
+
+        public Employee() {}
+
+        public Employee(String name) {
+            this.name = name;
+        }
+
+        public void setDepartment(Department department) {
+            this.department = department;
+        }
+    }
+
+
+    public static void main(String[] args) {
+
+        Department dept = new Department("IT");
+
+        Employee e1 = new Employee("Rahul");
+        Employee e2 = new Employee("Aman");
+
+        dept.addEmployee(e1);
+        dept.addEmployee(e2);
+
+        System.out.println("Department: IT");
+        System.out.println("Employees: Rahul, Aman");
+    }
+}
